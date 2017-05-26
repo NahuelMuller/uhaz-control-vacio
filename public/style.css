@@ -1,0 +1,441 @@
+#authDiv {
+	z-index: 100;	/*ACORDARSE DE HABILITAR*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-bottom: 4%;
+}
+
+#disablingDiv {
+	display: block;
+	z-index: 10;	/*ACORDARSE DE HABILITAR*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-bottom: 56.25%;
+	background-color: black;
+	opacity: 0.5;
+}
+
+#mainDiv {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-bottom: 56.25%;
+	background: url("images/ui3.png") no-repeat;
+    background-size: 100% auto;
+}
+
+#textDiv {
+	position: absolute;
+	bottom: -6%;
+	left: 0;
+	height: 6%;
+	width: 100%;
+	background-color: #3366ff;
+}
+
+span {
+	position: absolute;
+}
+
+.lecturaSensor, .velocidadTurbo {
+	position: absolute;
+	width: 8.4%;
+	height: 3%;
+	text-align: center;
+	font-size: 1.6vw;
+}
+
+#Mg11 {
+	top: 62.2%;
+	left: 83%;
+}
+#Mg12 {
+	top: 62.2%;
+	left: 64.1%;
+}
+#Mg13 {
+	top: 10%;
+	left: 79.4%;
+}
+#Mg14 {
+	top: 27.1%;
+	left: 64.9%;
+}
+#Mg21 {
+	top: 13.6%;
+	left: 10.4%;
+}
+
+#vTC1 {
+	top: 78.1%;
+	left: 79.4%;
+}
+#vTC2 {
+	top: 54.2%;
+	left: 61.5%;
+}
+#vTC3 {
+	top: 71.5%;
+	left: 13.9%;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+#pass {
+	position: absolute;
+	border: 0;
+	padding: 0 0 0 0px;
+	height: 78.125%;
+	top: 10%;
+	left: 85.875%;
+	width: 10%;
+	font-size: 2vw;
+	text-align: center;
+}
+
+label {
+	position: absolute;
+}
+
+input[type=checkbox].auth + label {
+	background: url("images/Deauth.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 3.125%;
+	height: 78.125%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+}
+input[type=checkbox].auth:checked + label {
+	background: url("images/Auth.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 3.125%;
+	height: 78.125%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+}
+
+#lauth {
+	top: 10%;
+	left: 95.875%;
+}
+
+input[type=checkbox].A + label {
+	background: url("images/A1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 2.6%;
+	height: 18.98%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: n-resize;
+}
+
+input[type=checkbox].A:checked + label {
+	background: url("images/A0.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 2.6%;
+	height: 18.98%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: n-resize;
+}
+
+input[type=checkbox].B + label {
+	background: url("images/B1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 10.68%;
+	height: 4.63%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: e-resize;
+}
+
+input[type=checkbox].B:checked + label {
+	background: url("images/B0.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 10.68%;
+	height: 4.63%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: e-resize;
+}
+
+input[type=checkbox].C + label {
+	background: url("images/C1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 2.86%;
+	height: 11.1%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: n-resize;
+}
+
+input[type=checkbox].C:checked + label {
+	background: url("images/C0.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 2.86%;
+	height: 11.1%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: n-resize;
+}
+
+input[type=checkbox].Scroll + label {
+	background: url("images/Scroll1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 3.125%;
+	height: 5.5556%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+input[type=checkbox].Scroll:checked + label {
+	background: url("images/Scroll0.gif") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 3.125%;
+	height: 5.5556%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+input[type=checkbox].Rc + label {
+	background: url("images/Rc0.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 1.5625%;
+	height: 2.7778%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+input[type=checkbox].Rc:checked + label {
+	background: url("images/Rc1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 1.5625%;
+	height: 2.7778%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+input[type=checkbox].Refri + label {
+	background: url("images/Refri0.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 5.208%;
+	height: 9.259%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+input[type=checkbox].Refri:checked + label {
+	background: url("images/Refri1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 5.208%;
+	height: 9.259%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+#lc0 {
+	top: 77%;
+    left: 63.5%;
+}
+#lc1 {
+	top: 77%;
+    left: 51.3%;
+}
+#lc2 {
+    top: 87%;
+    left: 13.2%;
+}
+#lc3 {
+    top: 79.5%;
+    left: 13.2%;
+}
+#lc4 {
+    top: 60%;
+    left: 6%;
+}
+
+input[type=checkbox].Sensor + label {
+	background: url("images/Rc0.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 1.5625%;
+	height: 2.7778%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+input[type=checkbox].Sensor:checked + label {
+	background: url("images/Rc1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 1.5625%;
+	height: 2.7778%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+#lM13 {
+	top: 10%;
+	left: 87.9%;
+}
+#lM14 {
+	top: 27.2%;
+	left: 73.4%;
+}
+#lM21 {
+	top: 10.4%;
+	left: 10.4%;
+}
+
+input[type=checkbox].Turbo + label {
+	background: url("images/TC1.png") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 2.34375%;
+	height: 4.16667%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+input[type=checkbox].Turbo:checked + label {
+	background: url("images/TC0.gif") 0 0px  no-repeat;
+	background-size: 100% auto;
+	width: 2.34375%;
+	height: 4.16667%;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	cursor: pointer;
+}
+
+#lTC1 {
+	top: 70.3%;
+    left: 79.3%;
+}
+#lTC2 {
+    top: 46.5%;
+    left: 61.3%;
+}
+#lTC3 {
+    top: 70.3%;
+    left: 24%;
+}
+
+#lv0 {
+	top: 24.43%;
+	left: 88.6%;
+}
+#lv1 {
+	top: 42.3%;
+	left: 88.6%;
+}
+#lv2 {
+	top: 66.2%;
+	left: 88.6%;
+}
+#lv3 {
+	top: 56%;
+	left: 78.2%;
+}
+#lv4 {
+	top: 42.3%;
+	left: 72.72%;
+}
+#lv5 {
+	top: 5.95%;
+	left: 70.4%;
+}
+#lv6 {
+	top: 34.5%;
+	left: 60.28%;
+}
+#lv7 {
+	top: 34.5%;
+	left: 49.2875%;
+}
+#lv8 {
+	top: 34.5%;
+	left: 38.29%;
+}
+#lv9 {
+	top: 24.45%;
+	left: 33.45%;
+}
+#lvA {
+	top: 42.3%;
+	left: 33.45%;
+}
+#lvB {
+	top: 66.2%;
+	left: 33.45%;
+}
+#lvC {
+	top: 56%;
+	left: 23.05%;
+}
+#lvD {
+	top: 5.95%;
+	left: 19.3%;
+}
+#lvE {
+	top: 34.6%;
+	left: 9.15%;
+}
+#lvF {
+	top: 5.95%;
+	left: 6.2%;
+}
+
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

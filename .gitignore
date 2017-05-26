@@ -1,0 +1,5 @@
+# Dependency directory
+node_modules/
+
+# Variables file
+private/vars.json
