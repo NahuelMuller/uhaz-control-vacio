@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<div id="authDiv">
-			<input type="password" id="pass" maxlength="10" placeholder="Password">
+			<input type="password" id="pass" maxlength="10" placeholder="Password" onkeypress="if(event.keyCode==13){auth(1);}">
 			<input type="checkbox" id="auth" class="auth" onclick="auth()"><label for="auth" id="lauth"></label>
 		</div>
 		<div id="disablingDiv"></div>

@@ -94,10 +94,10 @@ socket.on('vTC', function(data){
 
 //Client ---> Server
 
-function auth(){
+function auth(enter){
 	var pass = document.getElementById('pass').value;
 	var checked = document.getElementById('auth').checked;
-	if (checked == true){
+	if (checked == true || enter == 1){
 		socket.emit('auth', pass);
 	} else {
 		socket.emit('deauth');
