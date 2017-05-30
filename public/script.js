@@ -70,8 +70,8 @@ socket.on('statusRc', function(data){
 }); */
 
 socket.on('statusTC', function(data){
-	for (id = 0; id < 3; id++){
-		if (data[id + 3] == 1){
+	for (id = 1; id < 4; id++){
+		if (data[id + 2] == 1){
 			document.getElementById('TC' + id).checked = true;
 		} else {
 			document.getElementById('TC' + id).checked = false;
