@@ -89,7 +89,7 @@ socket.on('Mg', function(data){
 });
 
 socket.on('vTC', function(data){
-	document.getElementById('vTC' + data.id).innerHTML = data.velocidad;
+	document.getElementById('vTC' + data.id).innerHTML = data.velocidad + ' Hz';
 });
 
 //Client ---> Server
