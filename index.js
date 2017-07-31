@@ -165,8 +165,7 @@ io.sockets.on('connection', function (socket) { //gets called whenever a client 
 });
 
 ttyS1.on('data', function (data){	//Arduino ---> Host
-	//io.sockets.emit('serial', {value: data});
-	io.sockets.emit('serial', data);	//7.11.16 resta probar
+	io.sockets.emit('serial', data);
 	console.log(data);
 
 	if (data[0] == 's' && data[2] == 'v'){	//sRv0000000000000000
