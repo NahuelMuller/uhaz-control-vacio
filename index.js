@@ -188,7 +188,11 @@ ttyS1.on('data', function (data){	//Arduino ---> Host
 		var mensaje = 'Error';
 		switch (data[3]){	//Byte status
 			case '0':	//0 - Lectura OK
-				mensaje = data[4] + '.' + data[5] + data[6] + data[7] + 'E' + data[8] + data[9];
+				if(isNaN(data[4]) || isNaN(data[5]) || isNaN(data[6]) || isNaN(data[7]) || isNaN(data[9])){
+					mensaje = 'Error';
+				} else {
+					mensaje = data[4] + '.' + data[5] + data[6] + data[7] + 'E' + data[8] + data[9];
+				}
 				break;
 			case '1':	//1 - Under Range
 				mensaje = 'UNDRNG';
