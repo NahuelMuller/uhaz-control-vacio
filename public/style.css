@@ -440,7 +440,7 @@ input[type=checkbox].Turbo:checked + label {
     opacity: 1;
 }
 
-#modalAlert {
+#modalAlert, #modalConfirm {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
@@ -452,8 +452,8 @@ input[type=checkbox].Turbo:checked + label {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.modalAlert-content {
-    background-color: rgba(100, 210, 200, 1);
+.modalAlert-content, .modalConfirm-content {
+    background-color: rgba(200, 210, 40, 1);
     margin: auto;
     padding: 20px;
     border: 1px solid #666;
@@ -461,4 +461,8 @@ input[type=checkbox].Turbo:checked + label {
     width: 80%;
 	text-align:center;
 	font-size: 2vw;
+}
+
+.modalConfirm-content {
+    background-color: rgba(100, 210, 200, 1);
 }
