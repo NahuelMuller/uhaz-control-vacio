@@ -439,3 +439,26 @@ input[type=checkbox].Turbo:checked + label {
     visibility: visible;
     opacity: 1;
 }
+
+#modalAlert {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalAlert-content {
+    background-color: rgba(100, 210, 200, 1);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #666;
+	border-radius: 5px;
+    width: 80%;
+	text-align:center;
+	font-size: 2vw;
+}
