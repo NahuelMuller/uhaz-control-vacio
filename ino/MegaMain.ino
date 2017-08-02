@@ -85,7 +85,7 @@ void loop(){
         mgCabezal = fromHost[2];
         Serial3.write(mg, sizeof(mg));
         Serial3.flush();
-        delay(40);
+        delay(60);
         Serial3.write(5);
         delay(1);
         digitalWrite(Serial3Control, Receive);
