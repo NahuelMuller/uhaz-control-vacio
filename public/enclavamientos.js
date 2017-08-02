@@ -7,9 +7,9 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					|| $('v3').checked == true
 					|| $('v5').checked == true
 					|| $('M13').checked == true
-					|| (parseInt($('vTC1').innerHTML) || 1) > 0) {	// (|| 0) fix parseInt(NaN), (NaN || 0 => 0)
-					return false;									// When not used with boolean values, the OR (||) operator
-				} else {											// returns the first expression that can be evaluated to true
+					|| parseInt($('vTC1').innerHTML) > 0) {
+					return false;
+				} else {
 					return true;
 				}
 			} else {
@@ -23,7 +23,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					|| $('v3').checked == true
 					|| $('v5').checked == true
 					|| $('c2').checked == false
-					|| (parseInt($('vTC1').innerHTML) || 1) > 0) {
+					|| parseInt($('vTC1').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -41,7 +41,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					return true;
 				}
 			} else {
-				if ((parseInt($('vTC1').innerHTML) || 1) > 0) {
+				if (parseInt($('vTC1').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -72,7 +72,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					return true;
 				}
 			} else {
-				if ((parseInt($('vTC2').innerHTML) || 1) > 0) {
+				if (parseInt($('vTC2').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -89,8 +89,8 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					|| $('vD').checked == true
 					|| $('Mg13').innerHTML[6] != '-'
 					|| $('Mg14').innerHTML[6] != '-'
-					|| (parseInt($('Mg13').innerHTML[7]) || 0) < 3
-					|| (parseInt($('Mg14').innerHTML[7]) || 0) < 3) {
+					|| parseInt($('Mg13').innerHTML[7]) < 3
+					|| parseInt($('Mg14').innerHTML[7]) < 3) {
 					return false;
 				} else {
 					return true;
@@ -119,7 +119,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 		case 'v8':
 			if (stat == true){
 				if ($('Mg14').innerHTML[6] != '-'
-					|| (parseInt($('Mg14').innerHTML[7]) || 0) < 4) {
+					|| parseInt($('Mg14').innerHTML[7]) < 4) {
 					return false;
 				} else {
 					return true;
@@ -139,8 +139,8 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					|| $('vC').checked == true
 					|| $('vD').checked == true
 					|| $('M14').checked == true
-					|| (parseInt($('vTC2').innerHTML) || 1) > 0
-					|| (parseInt($('vTC3').innerHTML) || 1) > 0) {
+					|| parseInt($('vTC2').innerHTML) > 0
+					|| parseInt($('vTC3').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -160,8 +160,8 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					|| $('vC').checked == true
 					|| $('vD').checked == true
 					|| $('c3').checked == false
-					|| (parseInt($('vTC2').innerHTML) || 1) > 0
-					|| (parseInt($('vTC3').innerHTML) || 1) > 0) {
+					|| parseInt($('vTC2').innerHTML) > 0
+					|| parseInt($('vTC3').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -179,7 +179,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					return true;
 				}
 			} else {
-				if ((parseInt($('vTC3').innerHTML) || 1) > 0) {
+				if (parseInt($('vTC3').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -206,8 +206,8 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 			if (stat == true){
 				if ($('Mg14').innerHTML[6] != '-'
 					|| $('Mg21').innerHTML[6] != '-'
-					|| (parseInt($('Mg14').innerHTML[7]) || 0) < 3
-					|| (parseInt($('Mg21').innerHTML[7]) || 0) < 3) {
+					|| parseInt($('Mg14').innerHTML[7]) < 3
+					|| parseInt($('Mg21').innerHTML[7]) < 3) {
 					return false;
 				} else {
 					return true;
@@ -220,7 +220,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 		case 'vE':
 			if (stat == true){
 				if ($('Mg21').innerHTML[6] != '-'
-					|| (parseInt($('Mg21').innerHTML[7]) || 0) < 4) {
+					|| parseInt($('Mg21').innerHTML[7]) < 4) {
 					return false;
 				} else {
 					return true;
@@ -255,9 +255,9 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 				if ($('M13').checked == true
 					|| $('M14').checked == true
 					|| $('M21').checked == true
-					|| (parseInt($('vTC1').innerHTML) || 1) > 0
-					|| (parseInt($('vTC2').innerHTML) || 1) > 0
-					|| (parseInt($('vTC3').innerHTML) || 1) > 0) {
+					|| parseInt($('vTC1').innerHTML) > 0
+					|| parseInt($('vTC2').innerHTML) > 0
+					|| parseInt($('vTC3').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -310,9 +310,9 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 			if (stat == true){
 				return true;
 			} else {
-				if ((parseInt($('vTC1').innerHTML) || 1) > 0
-					|| (parseInt($('vTC2').innerHTML) || 1) > 0
-					|| (parseInt($('vTC3').innerHTML) || 1) > 0) {
+				if (parseInt($('vTC1').innerHTML) > 0
+					|| parseInt($('vTC2').innerHTML) > 0
+					|| parseInt($('vTC3').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
