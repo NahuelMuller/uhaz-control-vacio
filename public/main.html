@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="script.js"></script>
+		<script src="enclavamientos.js"></script>
 	</head>
 	<body>
 		<div id="authDiv">
@@ -14,32 +15,32 @@
 		</div>
 		<div id="disablingDiv"></div>
 		<div id="mainDiv">
-			<input type="checkbox" class="A" id="v5" name="Plato End Station" onclick="relaySet(this.id)" /><label for="v5" id="lv5"></label>
-			<input type="checkbox" class="A" id="vD" name="Plato Object Slit" onclick="relaySet(this.id)" /><label for="vD" id="lvD"></label>
-			<input type="checkbox" class="A" id="vF" name="Plato Acelerador" onclick="relaySet(this.id)" /><label for="vF" id="lvF"></label>
-			<input type="checkbox" class="B" id="v3" name="Plato Turbo 1" onclick="relaySet(this.id)" /><label for="v3" id="lv3"></label>
-			<input type="checkbox" class="B" id="v6" name="Plato Turbo 2" onclick="relaySet(this.id)" /><label for="v6" id="lv6"></label>
-			<input type="checkbox" class="B" id="v7" name="Plato Ionica 1" onclick="relaySet(this.id)" /><label for="v7" id="lv7"></label>
-			<input type="checkbox" class="B" id="v8" name="Plato Ionica 2" onclick="relaySet(this.id)" /><label for="v8" id="lv8"></label>
-			<input type="checkbox" class="B" id="vC" name="Plato Turbo 3" onclick="relaySet(this.id)" /><label for="vC" id="lvC"></label>
-			<input type="checkbox" class="B" id="vE" name="Plato Ionica 3" onclick="relaySet(this.id)" /><label for="vE" id="lvE"></label>
-			<input type="checkbox" class="C" id="v0" name="Salida End Station" onclick="relaySet(this.id)" /><label for="v0" id="lv0"></label>
-			<input type="checkbox" class="C" id="v1" name="Scroll End Station" onclick="relaySet(this.id)" /><label for="v1" id="lv1"></label>
-			<input type="checkbox" class="C" id="v2" name="Scroll Turbo 1" onclick="relaySet(this.id)" /><label for="v2" id="lv2"></label>
-			<input type="checkbox" class="C" id="v4" name="Scroll Turbo 2" onclick="relaySet(this.id)" /><label for="v4" id="lv4"></label>
-			<input type="checkbox" class="C" id="v9" name="Salida Object Slit" onclick="relaySet(this.id)" /><label for="v9" id="lv9"></label>
-			<input type="checkbox" class="C" id="vA" name="Scroll Object Slit" onclick="relaySet(this.id)" /><label for="vA" id="lvA"></label>
-			<input type="checkbox" class="C" id="vB" name="Scroll Turbo 3" onclick="relaySet(this.id)" /><label for="vB" id="lvB"></label>
+			<input type="checkbox" class="A" id="v5" name="Plato End Station" onclick="set(this.id)" /><label for="v5" id="lv5"></label>
+			<input type="checkbox" class="A" id="vD" name="Plato Object Slit" onclick="set(this.id)" /><label for="vD" id="lvD"></label>
+			<input type="checkbox" class="A" id="vF" name="Plato Acelerador" onclick="set(this.id)" /><label for="vF" id="lvF"></label>
+			<input type="checkbox" class="B" id="v3" name="Plato Turbo 1" onclick="set(this.id)" /><label for="v3" id="lv3"></label>
+			<input type="checkbox" class="B" id="v6" name="Plato Turbo 2" onclick="set(this.id)" /><label for="v6" id="lv6"></label>
+			<input type="checkbox" class="B" id="v7" name="Plato Ionica 1" onclick="set(this.id)" /><label for="v7" id="lv7"></label>
+			<input type="checkbox" class="B" id="v8" name="Plato Ionica 2" onclick="set(this.id)" /><label for="v8" id="lv8"></label>
+			<input type="checkbox" class="B" id="vC" name="Plato Turbo 3" onclick="set(this.id)" /><label for="vC" id="lvC"></label>
+			<input type="checkbox" class="B" id="vE" name="Plato Ionica 3" onclick="set(this.id)" /><label for="vE" id="lvE"></label>
+			<input type="checkbox" class="C" id="v0" name="Salida End Station" onclick="set(this.id)" /><label for="v0" id="lv0"></label>
+			<input type="checkbox" class="C" id="v1" name="Scroll End Station" onclick="set(this.id)" /><label for="v1" id="lv1"></label>
+			<input type="checkbox" class="C" id="v2" name="Scroll Turbo 1" onclick="set(this.id)" /><label for="v2" id="lv2"></label>
+			<input type="checkbox" class="C" id="v4" name="Scroll Turbo 2" onclick="set(this.id)" /><label for="v4" id="lv4"></label>
+			<input type="checkbox" class="C" id="v9" name="Salida Object Slit" onclick="set(this.id)" /><label for="v9" id="lv9"></label>
+			<input type="checkbox" class="C" id="vA" name="Scroll Object Slit" onclick="set(this.id)" /><label for="vA" id="lvA"></label>
+			<input type="checkbox" class="C" id="vB" name="Scroll Turbo 3" onclick="set(this.id)" /><label for="vB" id="lvB"></label>
 
-			<input type="checkbox" class="Rc" id="c0" name="Controladores Turbo y MaxiGauge" onclick="relaySet(this.id)" />
+			<input type="checkbox" class="Rc" id="c0" name="Controladores Turbo y MaxiGauge" onclick="set(this.id)" />
 			<label for="c0" id="lc0" class="tooltip"><span class="tooltiptext">Controladores Turbo y MaxiGauge</span></label>
-			<input type="checkbox" class="Rc" id="c1" name="Controladores Ionicas" onclick="relaySet(this.id)" />
+			<input type="checkbox" class="Rc" id="c1" name="Controladores Ionicas" onclick="set(this.id)" />
 			<label for="c1" id="lc1" class="tooltip"><span class="tooltiptext">Controladores Ionicas</span></label>
-			<input type="checkbox" class="Scroll" id="c2" name="Scroll End Station" onclick="relaySet(this.id)" />
+			<input type="checkbox" class="Scroll" id="c2" name="Scroll End Station" onclick="set(this.id)" />
 			<label for="c2" id="lc2" class="tooltip"><span class="tooltiptext">Scroll End Station</span></label>
-			<input type="checkbox" class="Scroll" id="c3" name="Scroll Object Slit" onclick="relaySet(this.id)" />
+			<input type="checkbox" class="Scroll" id="c3" name="Scroll Object Slit" onclick="set(this.id)" />
 			<label for="c3" id="lc3" class="tooltip"><span class="tooltiptext">Scroll Object Slit</span></label>
-			<input type="checkbox" class="Refri" id="c4" name="Refrigeracion" onclick="relaySet(this.id)" />
+			<input type="checkbox" class="Refri" id="c4" name="Refrigeracion" onclick="set(this.id)" />
 			<label for="c4" id="lc4" class="tooltip"><span class="tooltiptext">Refrigeracion</span></label>
 
 
@@ -53,13 +54,13 @@
 			<span class="velocidadTurbo" id="vTC2">000 Hz</span>
 			<span class="velocidadTurbo" id="vTC3">000 Hz</span>
 
-			<input type="checkbox" class="Sensor" id="M13" name="Sensor 1 (nombre provisorio)" onclick="sensorSet(this.id)" /><label for="M13" id="lM13"></label>
-			<input type="checkbox" class="Sensor" id="M14" name="Sensor 2 (nombre provisorio)" onclick="sensorSet(this.id)" /><label for="M14" id="lM14"></label>
-			<input type="checkbox" class="Sensor" id="M21" name="Sensor 3 (nombre provisorio)" onclick="sensorSet(this.id)" /><label for="M21" id="lM21"></label>
+			<input type="checkbox" class="Sensor" id="M13" name="Sensor 1 (nombre provisorio)" onclick="set(this.id)" /><label for="M13" id="lM13"></label>
+			<input type="checkbox" class="Sensor" id="M14" name="Sensor 2 (nombre provisorio)" onclick="set(this.id)" /><label for="M14" id="lM14"></label>
+			<input type="checkbox" class="Sensor" id="M21" name="Sensor 3 (nombre provisorio)" onclick="set(this.id)" /><label for="M21" id="lM21"></label>
 
-			<input type="checkbox" class="Turbo" id="TC1" name="Turbo 1 (nombre provisorio)" onclick="turboSet(this.id)" /><label for="TC1" id="lTC1"></label>
-			<input type="checkbox" class="Turbo" id="TC2" name="Turbo 2 (nombre provisorio)" onclick="turboSet(this.id)" /><label for="TC2" id="lTC2"></label>
-			<input type="checkbox" class="Turbo" id="TC3" name="Turbo 3 (nombre provisorio)" onclick="turboSet(this.id)" /><label for="TC3" id="lTC3"></label>
+			<input type="checkbox" class="Turbo" id="TC1" name="Turbo 1 (nombre provisorio)" onclick="set(this.id)" /><label for="TC1" id="lTC1"></label>
+			<input type="checkbox" class="Turbo" id="TC2" name="Turbo 2 (nombre provisorio)" onclick="set(this.id)" /><label for="TC2" id="lTC2"></label>
+			<input type="checkbox" class="Turbo" id="TC3" name="Turbo 3 (nombre provisorio)" onclick="set(this.id)" /><label for="TC3" id="lTC3"></label>
 
 			<div id="textDiv">
 				<span id="text">Console logs</span>
@@ -69,6 +70,13 @@
 			<div class="modalAlert-content">
 				<div id="modalAlert-text"></div>
 				<button onclick="closeAlert()">OK</button>
+			</div>
+		</div>
+		<div id="modalConfirm">
+			<div class="modalConfirm-content">
+				<div id="modalConfirm-text"></div>
+				<button onclick="modalConfirm(1)">Confirm</button>
+				<button onclick="modalConfirm(0)">Cancel</button>
 			</div>
 		</div>
 	</body>

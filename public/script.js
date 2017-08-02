@@ -1,6 +1,6 @@
 var socket = io.connect();
 
-var $ = function(id){	//document.getElementById('id') => $('id')
+function $(id) {	//document.getElementById('id') => $('id')
 	return document.getElementById(id);
 };
 
@@ -109,7 +109,7 @@ function auth(enter){
 	$('pass').value = '';
 }
 
-function relaySet(rId){
+/* function relaySet(rId){
 	if (false) {	//condicion especial / modo mantenimiento (no implementada aun)
 		socket.emit('relaySet', {rId: rId, set: $(rId).checked});
 	} else if ($(rId).checked == true && rId[0] == 'v') {	//Seccion Valvulas (Preverificacion Apertura)
@@ -119,7 +119,7 @@ function relaySet(rId){
 				if ($('v1').checked == true ||
 					$('v5').checked == true ||
 					$('v3').checked == true) {
-					modalAlert("~Cerrar Valvula Scroll End Station\n~Cerrar Plato End Station\n~Cerrar Plato Turbo 1");
+					modalAlert("~Cerrar Valvula Scroll End Station<br>~Cerrar Plato End Station<br>~Cerrar Plato Turbo 1");
 					$(rId).checked = false;
 				} else {	//All OK, proceed to open
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -129,7 +129,7 @@ function relaySet(rId){
 					$('v3').checked == true ||
 					$('c2').checked == false ||
 					$('v0').checked == true) {
-					modalAlert("~Cerrar Plato End Station\n~Cerrar Plato Turbo 1\n~Encender Scroll End Station\n~Cerrar Valvula Salida End Station");
+					modalAlert("~Cerrar Plato End Station<br>~Cerrar Plato Turbo 1<br>~Encender Scroll End Station<br>~Cerrar Valvula Salida End Station");
 					$(rId).checked = false;
 				} else {	//All OK, proceed to open
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -145,7 +145,7 @@ function relaySet(rId){
 				if ($('Mg13').innerHTML[6] != '-' ||
 					(parseInt($('Mg13').innerHTML[7]) || 0) < 1 ||	// || 0 arregla parseInt NaN
 					$('v2').checked == false) {
-					modalAlert("~Verificar Presion End Station\n~Abrir Valvula Scroll Turbo 1");
+					modalAlert("~Verificar Presion End Station<br>~Abrir Valvula Scroll Turbo 1");
 					$(rId).checked = false;
 				} else {	//All OK, proceed to open
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -164,7 +164,7 @@ function relaySet(rId){
 					$('v6').checked == true ||
 					$('v7').checked == true ||
 					$('v8').checked == true) {
-					modalAlert("~Verificar Presion End Station/Object Slit\n~Cerrar Plato Turbo 2\n~Cerrar Plato Ionica 1\n~Cerrar Plato Ionica 2");
+					modalAlert("~Verificar Presion End Station/Object Slit<br>~Cerrar Plato Turbo 2<br>~Cerrar Plato Ionica 1<br>~Cerrar Plato Ionica 2");
 					$(rId).checked = false;
 				} else {	//All OK, proceed to open
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -199,7 +199,7 @@ function relaySet(rId){
 					$('vD').checked == true ||
 					$('v7').checked == true ||
 					$('v8').checked == true) {
-					modalAlert("~Encender Scroll Object Slit\n~Cerrar Plato End Station\n~~Cerrar Plato Turbo 2\n~Cerrar Plato Turbo 3\n~Cerrar Plato Object Slit\n~Cerrar Plato Ionica 1\n~Cerrar Plato Ionica 2");
+					modalAlert("~Encender Scroll Object Slit<br>~Cerrar Plato End Station<br>~~Cerrar Plato Turbo 2<br>~Cerrar Plato Turbo 3<br>~Cerrar Plato Object Slit<br>~Cerrar Plato Ionica 1<br>~Cerrar Plato Ionica 2");
 					$(rId).checked = false;
 				} else {	//All OK, proceed to open
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -215,7 +215,7 @@ function relaySet(rId){
 				if ($('Mg14').innerHTML[6] != '-' ||
 					(parseInt($('Mg14').innerHTML[7]) || 0) < 1 ||
 					$('vB').checked == false) {
-					modalAlert("~Verificar Presion Object Slit\n~Abrir Valvula Scroll Turbo 3");
+					modalAlert("~Verificar Presion Object Slit<br>~Abrir Valvula Scroll Turbo 3");
 					$(rId).checked = false;
 				} else {	//All OK, proceed to open
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -269,7 +269,7 @@ function relaySet(rId){
 				if ($('v4').checked == true ||
 					$('vA').checked == true ||
 					$('vB').checked == true) {
-					modalAlert("~Cerrar Valvula Scroll Turbo 2\n~Cerrar Valvula Scroll Object Slit\n~Cerrar Valvula Scroll Turbo 3");
+					modalAlert("~Cerrar Valvula Scroll Turbo 2<br>~Cerrar Valvula Scroll Object Slit<br>~Cerrar Valvula Scroll Turbo 3");
 					$(rId).checked = true;
 				} else {	//All OK, proceed to shutdown
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -277,7 +277,7 @@ function relaySet(rId){
 			} else if (rId == 'c2'){
 				if ($('v1').checked == true ||
 					$('v2').checked == true) {
-					modalAlert("~Cerrar Valvula Scroll End Station\n~Cerrar Valvula Scroll Turbo 1");
+					modalAlert("~Cerrar Valvula Scroll End Station<br>~Cerrar Valvula Scroll Turbo 1");
 					$(rId).checked = true;
 				} else {	//All OK, proceed to shutdown
 					socket.emit('relaySet', {rId: rId, set: $(rId).checked});
@@ -292,9 +292,9 @@ function relaySet(rId){
 				($(rId).checked == true && rId[0] == 'c')) {	//Seccion Cerrado Valvulas y Prendido Controladores
 		socket.emit('relaySet', {rId: rId, set: $(rId).checked});
 	}
-}
+} */
 
-function sensorSet(sId) {
+/* function sensorSet(sId) {
 	if ($(sId).checked == true) {
 		var check = confirm("Encender " + $(sId).name + "?");
 		if (check == true) {
@@ -316,9 +316,9 @@ function sensorSet(sId) {
 		}
 
 	}
-}
+} */
 
-function turboSet(tId) {
+/* function turboSet(tId) {
 	if ($(tId).checked == true) {
 		var check = confirm("Encender " + $(tId).name + "?");
 		if (check == true) {
@@ -339,13 +339,49 @@ function turboSet(tId) {
 			$(tId).checked = true;
 		}
 	}
-}
+} */
 
 function modalAlert(textAlert) {
 	$('modalAlert').style.display = 'block';
 	$('modalAlert-text').innerHTML = textAlert;
 }
 
-function closeAlert(){
+function closeAlert() {
 	$('modalAlert').style.display = 'none';
 }
+
+function set(id) {
+	window.ultimoId = id;	//Stores last id in a global variable
+	window.lastStat = $(id).checked;	//Stores last stat in a global variable
+	if (revisarEnclavamientos(id, window.lastStat)) {
+		$('modalConfirm').style.display = 'block';
+		if (window.lastStat){
+			$('modalConfirm-text').innerHTML = 'Abrir/Encender ' + $(id).name + '?';
+		} else {
+			$('modalConfirm-text').innerHTML = 'Cerrar/Apagar ' + $(id).name + '?';
+		}
+	} else {
+		modalAlert(conditions(id, window.lastStat));
+		$(id).checked = !window.lastStat;
+	}
+}
+
+function modalConfirm(value) {
+	var id = window.ultimoId;
+	$('modalConfirm').style.display = 'none';
+	if (value == 1){
+		if (id[0] == 'v' || id[0] == 'c'){
+			socket.emit('relaySet', {rId: id, set: window.lastStat});
+		} else if (id[0] == 'M'){
+			socket.emit('sensorSet', {sId: id, set: window.lastStat});
+		} else if (id[0] == 'T'){
+			socket.emit('turboSet', {tId: id, set: window.lastStat});
+		}
+		$(id).checked = window.lastStat;
+	} else {
+		$(id).checked = !window.lastStat;
+	}
+}
+
+
+
