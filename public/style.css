@@ -466,3 +466,14 @@ input[type=checkbox].Turbo:checked + label {
 .modalConfirm-content {
     background-color: rgba(100, 210, 200, 1);
 }
+
+button {
+	background-color: #4CAF50;
+    border: none;
+	border-radius: 5px;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vw;
+}
