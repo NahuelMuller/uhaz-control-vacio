@@ -17,12 +17,13 @@ byte fromHost[5];
 byte toTest[] = {84, 69, 83, 84, 13};
 byte i, c, input;
 byte mgId = 0, mgCabezal = 0, tcId = 0;  //guardan la ultima seleccion
+int turbo_acelerador = 45;
 //statusRv[] = sRv(0 x 16)<CR>
 byte statusRv[] = {115, 82, 118, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 13};
 //statusRc[] = sRc(0 x 5)<CR>
 byte statusRc[] = {115, 82, 99, 49, 49, 49, 49, 49, 13};
-//statusTC[] = sTC(0 x 3)<CR>
-byte statusTC[] = {115, 84, 67, 48, 48, 48, 13};
+//statusTC[] = sTC(0 x 4)<CR>
+byte statusTC[] = {115, 84, 67, 48, 48, 48, 48, 13};
 //errorPlato[] = ePl(0 x 9)<CR>
 byte errorPlato[] = {101, 80, 108, 48, 48, 48, 48, 48, 48, 48, 48, 48, 13};
 
@@ -44,7 +45,8 @@ void setup(){
     pinMode(j, OUTPUT);
     digitalWrite(j, HIGH);  //Enabled
   }
-  for (byte j = 45; j <= 53; j++){  //Entradas Plato
+  pinMode(turbo_acelerador, INPUT);
+  for (byte j = 46; j <= 53; j++){  //Entradas Plato
     pinMode(j, INPUT_PULLUP);
   }
   Serial.begin(9600);  //Raspberry, probar con 115200
@@ -154,6 +156,11 @@ void loop(){
         digitalWrite(Serial2Control, Receive);
       } break;
       case 9: {  //TCx= : Informar ON/OFF bomba Pfeiffer TCx
+        if (digitalRead(turbo_acelerador) == HIGH){
+          statusTC[6] = 49;
+        } else {
+          statusTC[6] = 48;
+        }
         Serial.write(statusTC, sizeof(statusTC));
         Serial.flush();
       } break;
