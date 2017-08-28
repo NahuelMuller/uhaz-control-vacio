@@ -401,7 +401,7 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'v3':
 			if (stat == true){
 				condition = "-Cerrar " + $('v0').name + "<br>-Cerrar " + $('v1').name
-							+ "<br>-Abrir " + $('v2').name + "<br>-Verificar Presión End Station";
+							+ "<br>-Abrir " + $('v2').name + "<br>-Verificar Presi&oacuten End Station";
 			}
 			break;
 		case 'v4':
@@ -415,19 +415,19 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 			if (stat == true){
 				condition = "-Cerrar " + $('v3').name + "<br>-Cerrar " + $('v6').name
 							+"-Cerrar " + $('v7').name + "<br>-Cerrar " + $('v8').name
-							+"-Cerrar " + $('vD').name + "<br>-Verificar Presión End Station/Object Slit";
+							+"-Cerrar " + $('vD').name + "<br>-Verificar Presi&oacuten End Station/Object Slit";
 			}
 			break;
 		case 'v6':
 			if (stat == true){
 				condition = "-Abrir " + $('v4').name + "<br>-Cerrar " + $('v9').name
-							+ "<br>-Cerrar " + $('vA').name + "<br>-Verificar Presión Object Slit";
+							+ "<br>-Cerrar " + $('vA').name + "<br>-Verificar Presi&oacuten Object Slit";
 			}
 			break;
 		case 'v7':
 		case 'v8':
 			if (stat == true){
-				condition = "<br>-Verificar Presión Object Slit";
+				condition = "<br>-Verificar Presi&oacuten Object Slit";
 			}
 			break;
 		case 'v9':
@@ -460,22 +460,22 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'vC':
 			if (stat == true){
 				condition = "-Cerrar " + $('v9').name + "<br>-Cerrar " + $('vA').name 
-							"<br>-Abrir " + $('vB').name + "<br>-Verificar Presión Object Slit";
+							"<br>-Abrir " + $('vB').name + "<br>-Verificar Presi&oacuten Object Slit";
 			}
 			break;
 		case 'vD':
 			if (stat == true){
-				condition = "-Verificar Presión Object Slit/Acelerador";
+				condition = "-Verificar Presi&oacuten Object Slit/Acelerador";
 			}
 			break;
 		case 'vE':
 			if (stat == true){
-				condition = "-Verificar Presión Acelerador";
+				condition = "-Verificar Presi&oacuten Acelerador";
 			}
 			break;
 		case 'vF':
 			if (stat == true){
-				condition = "-Válvula no implementada/conectada";
+				condition = "-V&aacutelvula no implementada/conectada";
 			}
 			break;
 
