@@ -26,7 +26,7 @@
 	left: 0;
 	width: 100%;
 	padding-bottom: 56.25%;
-	background: url("images/ui3.png") no-repeat;
+	background: url("images/ui4.png") no-repeat;
     background-size: 100% auto;
 }
 
@@ -263,8 +263,12 @@ input[type=checkbox].Refri:checked + label {
     left: 13.2%;
 }
 #lc4 {
-    top: 60%;
-    left: 6%;
+    top: 81%;
+    left: 4%;
+}
+#lc5 {
+    top: 63.2%;
+    left: 6.8%;
 }
 
 input[type=checkbox].Sensor + label {
