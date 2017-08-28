@@ -180,7 +180,7 @@ ttyS1.on('data', function (data){	//Arduino ---> Host
 		io.sockets.emit('statusMG', data);
 	} */
 
-	if (data[0] == 's' && data[1] == 'T'){	//sTC000
+	if (data[0] == 's' && data[1] == 'T'){	//sTC0000
 		io.sockets.emit('statusTC', data);
 	}
 

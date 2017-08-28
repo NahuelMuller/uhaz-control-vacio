@@ -1,5 +1,5 @@
 #authDiv {
-	z-index: 100;	/*ACORDARSE DE HABILITAR*/
+	z-index: -100;	/*ACORDARSE DE HABILITAR*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -9,7 +9,7 @@
 
 #disablingDiv {
 	display: block;
-	z-index: 10;	/*ACORDARSE DE HABILITAR*/
+	z-index: -10;	/*ACORDARSE DE HABILITAR*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -266,10 +266,6 @@ input[type=checkbox].Refri:checked + label {
     top: 81%;
     left: 4%;
 }
-#lc5 {
-    top: 63.2%;
-    left: 6.8%;
-}
 
 input[type=checkbox].Sensor + label {
 	background: url("images/Rc0.png") 0 0px  no-repeat;
@@ -335,6 +331,10 @@ input[type=checkbox].Turbo:checked + label {
 #lTC3 {
     top: 70.3%;
     left: 24%;
+}
+#lTC4 {
+    top: 61.5%;
+    left: 7.2%;
 }
 
 #lv0 {

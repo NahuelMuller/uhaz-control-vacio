@@ -72,7 +72,7 @@ socket.on('statusRc', function(data){
 }); */
 
 socket.on('statusTC', function(data){
-	for (id = 1; id < 4; id++){
+	for (id = 1; id < 5; id++){
 		if (data[id + 2] == 1){
 			$('TC' + id).checked = true;
 		} else {
