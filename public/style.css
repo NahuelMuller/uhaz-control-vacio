@@ -1,5 +1,5 @@
 #authDiv {
-	z-index: -100;	/*ACORDARSE DE HABILITAR*/
+	z-index: 100;	/*ACORDARSE DE HABILITAR*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -9,7 +9,7 @@
 
 #disablingDiv {
 	display: block;
-	z-index: -10;	/*ACORDARSE DE HABILITAR*/
+	z-index: 10;	/*ACORDARSE DE HABILITAR*/
 	position: absolute;
 	top: 0;
 	left: 0;
