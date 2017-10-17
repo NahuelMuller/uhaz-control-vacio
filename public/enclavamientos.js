@@ -41,11 +41,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					return true;
 				}
 			} else {
-				if (parseInt($('vTC1').innerHTML) > 0) {
-					return false;
-				} else {
-					return true;
-				}
+				return true;
 			}
 			break;
 			
@@ -72,11 +68,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					return true;
 				}
 			} else {
-				if (parseInt($('vTC2').innerHTML) > 0) {
-					return false;
-				} else {
-					return true;
-				}
+				return true;
 			}
 			break;
 			
@@ -179,11 +171,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					return true;
 				}
 			} else {
-				if (parseInt($('vTC3').innerHTML) > 0) {
-					return false;
-				} else {
-					return true;
-				}
+				return true;
 			}
 			break;
 			
@@ -311,8 +299,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 				return true;
 			} else {
 				if (parseInt($('vTC1').innerHTML) > 0
-					|| parseInt($('vTC2').innerHTML) > 0
-					|| parseInt($('vTC3').innerHTML) > 0) {
+					|| parseInt($('vTC2').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
@@ -394,8 +381,6 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'v2':
 			if (stat == true){
 				condition = "<br>-Encender " + $('c2').name;
-			} else {
-				condition = "<br>-Esperar frenado " + $('TC1').name;
 			}
 			break;
 		case 'v3':
@@ -407,8 +392,6 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'v4':
 			if (stat == true){
 				condition = "<br>-Encender " + $('c3').name;
-			} else {
-				condition = "<br>-Esperar frenado " + $('TC2').name;
 			}
 			break;
 		case 'v5':
@@ -453,8 +436,6 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'vB':
 			if (stat == true){
 				condition = "<br>-Encender " + $('c3').name;
-			} else {
-				condition = "<br>-Esperar frenado " + $('TC3').name;
 			}
 			break;
 		case 'vC':
@@ -516,8 +497,7 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'c4':
 			if (stat == false){
 				condition = "-Esperar frenado " + $('TC1').name
-							+ "<br>-Esperar frenado " + $('TC2').name
-							+ "<br>-Esperar frenado " + $('TC3').name;
+							+ "<br>-Esperar frenado " + $('TC2').name;
 			}
 			break;
 
