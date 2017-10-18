@@ -362,101 +362,238 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 
 
 function conditions(id, stat) {	//returns a string that describes the condition to put (id) on (stat)
-	var condition = "";
+	var condition = "";			//Warning: Bad code ¯\_(ツ)_/¯
 	switch (id){
 		case 'v0':
 			if (stat == true){
-				condition = "-Cerrar " + $('v1').name + "<br>-Cerrar " + $('v3').name
-							+ "<br>-Cerrar " + $('v5').name + "<br>-Apagar " + $('M13').name
-							+ "<br>-Esperar frenado " + $('TC1').name;
+				if ($('v1').checked == true){
+					condition = condition + "-Cerrar " + $('v1').name + "<br>";
+				}
+				if ($('v3').checked == true){
+					condition = condition + "-Cerrar " + $('v3').name + "<br>";
+				}
+				if ($('v5').checked == true){
+					condition = condition + "-Cerrar " + $('v5').name + "<br>";
+				}
+				if ($('M13').checked == true){
+					condition = condition + "-Apagar " + $('M13').name + "<br>";
+				}
+				if (parseInt($('vTC1').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC1').name + "<br>";
+				}
 			}
 			break;
 		case 'v1':
 			if (stat == true){
-				condition = "-Cerrar " + $('v0').name + "<br>-Cerrar " + $('v3').name
-							+ "<br>-Cerrar " + $('v5').name + "<br>-Encender " + $('c2').name
-							+ "<br>-Esperar frenado " + $('TC1').name;
+				if ($('v0').checked == true){
+					condition = condition + "-Cerrar " + $('v0').name + "<br>";
+				}
+				if ($('v3').checked == true){
+					condition = condition + "-Cerrar " + $('v3').name + "<br>";
+				}
+				if ($('v5').checked == true){
+					condition = condition + "-Cerrar " + $('v5').name + "<br>";
+				}
+				if ($('c2').checked == false){
+					condition = condition + "-Encender " + $('c2').name + "<br>";
+				}
+				if (parseInt($('vTC1').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC1').name + "<br>";
+				}
 			}
 			break;
 		case 'v2':
 			if (stat == true){
-				condition = "<br>-Encender " + $('c2').name;
+				if ($('c2').checked == false){
+					condition = condition + "-Encender " + $('c2').name + "<br>";
+				}
 			}
 			break;
 		case 'v3':
 			if (stat == true){
-				condition = "-Cerrar " + $('v0').name + "<br>-Cerrar " + $('v1').name
-							+ "<br>-Abrir " + $('v2').name + "<br>-Verificar Presi&oacuten End Station";
+				if ($('v0').checked == true){
+					condition = condition + "-Cerrar " + $('v0').name + "<br>";
+				}
+				if ($('v1').checked == true){
+					condition = condition + "-Cerrar " + $('v1').name + "<br>";
+				}
+				if ($('v2').checked == false){
+					condition = condition + "-Abrir " + $('v2').name + "<br>";
+				}
+				if ($('Mg13').innerHTML[6] != '-'){
+					condition = condition + "-Verificar Presi&oacuten End Station<br>";
+				}
 			}
 			break;
 		case 'v4':
 			if (stat == true){
-				condition = "<br>-Encender " + $('c3').name;
+				if ($('c3').checked == false){
+					condition = condition + "-Encender " + $('c3').name + "<br>";
+				}
 			}
 			break;
 		case 'v5':
 			if (stat == true){
-				condition = "-Cerrar " + $('v3').name + "<br>-Cerrar " + $('v6').name
-							+"-Cerrar " + $('v7').name + "<br>-Cerrar " + $('v8').name
-							+"-Cerrar " + $('vD').name + "<br>-Verificar Presi&oacuten End Station/Object Slit";
+				if ($('v3').checked == true){
+					condition = condition + "-Cerrar " + $('v3').name + "<br>";
+				}
+				if ($('v6').checked == true){
+					condition = condition + "-Cerrar " + $('v6').name + "<br>";
+				}
+				if ($('v7').checked == true){
+					condition = condition + "-Cerrar " + $('v7').name + "<br>";
+				}
+				if ($('v8').checked == true){
+					condition = condition + "-Cerrar " + $('v8').name + "<br>";
+				}
+				if ($('vD').checked == true){
+					condition = condition + "-Cerrar " + $('vD').name + "<br>";
+				}
+				if ($('Mg13').innerHTML[6] != '-'
+					|| $('Mg14').innerHTML[6] != '-'
+					|| parseInt($('Mg13').innerHTML[7]) < 3
+					|| parseInt($('Mg14').innerHTML[7]) < 3){
+					condition = condition + "-Verificar Presi&oacuten End Station/Object Slit<br>";
+				}
 			}
 			break;
 		case 'v6':
 			if (stat == true){
-				condition = "-Abrir " + $('v4').name + "<br>-Cerrar " + $('v9').name
-							+ "<br>-Cerrar " + $('vA').name + "<br>-Verificar Presi&oacuten Object Slit";
+				if ($('v4').checked == false){
+					condition = condition + "-Abrir " + $('v4').name + "<br>";
+				}
+				if ($('v9').checked == true){
+					condition = condition + "-Cerrar " + $('v9').name + "<br>";
+				}
+				if ($('vA').checked == true){
+					condition = condition + "-Cerrar " + $('vA').name + "<br>";
+				}
+				if ($('Mg14').innerHTML[6] != '-'){
+					condition = condition + "-Verificar Presi&oacuten Object Slit<br>";
+				}
 			}
 			break;
 		case 'v7':
 		case 'v8':
 			if (stat == true){
-				condition = "<br>-Verificar Presi&oacuten Object Slit";
+				if ($('Mg14').innerHTML[6] != '-'
+					|| parseInt($('Mg14').innerHTML[7]) < 4){
+					condition = condition + "-Verificar Presi&oacuten Object Slit<br>";
+				}
 			}
 			break;
 		case 'v9':
 			if (stat == true){
-				condition = "-Cerrar " + $('v5').name + "<br>-Cerrar " + $('v6').name
-							+ "<br>-Cerrar " + $('v7').name + "<br>-Cerrar " + $('v8').name
-							+ "<br>-Cerrar " + $('vA').name + "<br>-Cerrar " + $('vC').name
-							+ "<br>-Cerrar " + $('vD').name	+ "<br>-Apagar " + $('M14').name
-							+ "<br>-Esperar frenado " + $('TC2').name
-							+ "<br>-Esperar frenado " + $('TC3').name;
+				if ($('v5').checked == true){
+					condition = condition + "-Cerrar " + $('v5').name + "<br>";
+				}
+				if ($('v6').checked == true){
+					condition = condition + "-Cerrar " + $('v6').name + "<br>";
+				}
+				if ($('v7').checked == true){
+					condition = condition + "-Cerrar " + $('v7').name + "<br>";
+				}
+				if ($('v8').checked == true){
+					condition = condition + "-Cerrar " + $('v8').name + "<br>";
+				}
+				if ($('vA').checked == true){
+					condition = condition + "-Cerrar " + $('vA').name + "<br>";
+				}
+				if ($('vC').checked == true){
+					condition = condition + "-Cerrar " + $('vC').name + "<br>";
+				}
+				if ($('vD').checked == true){
+					condition = condition + "-Cerrar " + $('vD').name	+ "<br>";
+				}
+				if ($('M14').checked == true){
+					condition = condition + "-Apagar " + $('M14').name + "<br>";
+				}
+				if (parseInt($('vTC2').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC2').name + "<br>";
+				}
+				if (parseInt($('vTC3').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC3').name + "<br>";
+				}
 			}
 			break;
 		case 'vA':
 			if (stat == true){
-				condition = "-Cerrar " + $('v5').name + "<br>-Cerrar " + $('v6').name
-							+ "<br>-Cerrar " + $('v7').name + "<br>-Cerrar " + $('v8').name
-							+ "<br>-Cerrar " + $('v9').name + "<br>-Cerrar " + $('vC').name
-							+ "<br>-Cerrar " + $('vD').name	+ "<br>-Encender " + $('c3').name
-							+ "<br>-Esperar frenado " + $('TC2').name
-							+ "<br>-Esperar frenado " + $('TC3').name;
+				if ($('v5').checked == true){
+					condition = condition + "-Cerrar " + $('v5').name + "<br>";
+				}
+				if ($('v6').checked == true){
+					condition = condition + "-Cerrar " + $('v6').name + "<br>";
+				}
+				if ($('v7').checked == true){
+					condition = condition + "-Cerrar " + $('v7').name + "<br>";
+				}
+				if ($('v8').checked == true){
+					condition = condition + "-Cerrar " + $('v8').name + "<br>";
+				}
+				if ($('v9').checked == true){
+					condition = condition + "-Cerrar " + $('v9').name + "<br>";
+				}
+				if ($('vC').checked == true){
+					condition = condition + "-Cerrar " + $('vC').name + "<br>";
+				}
+				if ($('vD').checked == true){
+					condition = condition + "-Cerrar " + $('vD').name	+ "<br>";
+				}
+				if ($('c3').checked == false){
+					condition = condition + "-Encender " + $('c3').name + "<br>";
+				}
+				if (parseInt($('vTC2').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC2').name + "<br>";
+				}
+				if (parseInt($('vTC3').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC3').name + "<br>";
+				}
 			}
 			break;
 		case 'vB':
 			if (stat == true){
-				condition = "<br>-Encender " + $('c3').name;
+				if ($('c3').checked == false){
+					condition = condition + "-Encender " + $('c3').name + "<br>";
+				}
 			}
 			break;
 		case 'vC':
 			if (stat == true){
-				condition = "-Cerrar " + $('v9').name + "<br>-Cerrar " + $('vA').name 
-							"<br>-Abrir " + $('vB').name + "<br>-Verificar Presi&oacuten Object Slit";
+				if ($('v9').checked == true){
+					condition = condition + "-Cerrar " + $('v9').name + "<br>";
+				}
+				if ($('vA').checked == true){
+					condition = condition + "-Cerrar " + $('vA').name + "<br>";
+				}
+				if ($('vB').checked == false){
+					condition = condition + "-Abrir " + $('vB').name + "<br>";
+				}
+				if ($('Mg14').innerHTML[6] != '-'){
+					condition = condition + "-Verificar Presi&oacuten Object Slit<br>";
+				}
 			}
 			break;
 		case 'vD':
 			if (stat == true){
-				condition = "-Verificar Presi&oacuten Object Slit/Acelerador";
+				if ($('Mg14').innerHTML[6] != '-'
+					|| $('Mg21').innerHTML[6] != '-'
+					|| parseInt($('Mg14').innerHTML[7]) < 3
+					|| parseInt($('Mg21').innerHTML[7]) < 3){
+					condition = condition + "-Verificar Presi&oacuten Object Slit/Acelerador<br>";
+				}
 			}
 			break;
 		case 'vE':
 			if (stat == true){
-				condition = "-Verificar Presi&oacuten Acelerador";
+				if ($('Mg21').innerHTML[6] != '-'
+					|| parseInt($('Mg21').innerHTML[7]) < 4){
+					condition = condition + "-Verificar Presi&oacuten Acelerador<br>";
+				}
 			}
 			break;
 		case 'vF':
 			if (stat == true){
-				condition = "-V&aacutelvula no implementada/conectada";
+				condition = condition + "-V&aacutelvula no implementada/conectada<br>";
 			}
 			break;
 
@@ -464,62 +601,121 @@ function conditions(id, stat) {	//returns a string that describes the condition 
 		case 'M14':
 		case 'M21':
 			if (stat == true){
-				condition = "-Encender " + $('c0').name;
+				if ($('c0').checked == false){
+					condition = condition + "-Encender " + $('c0').name + "<br>";
+				}
 			}
 			break;
 
 		case 'c0':
 			if (stat == false){
-				condition = "-Apagar " + $('M13').name + "<br>-Apagar " + $('M14').name
-							+ "<br>-Apagar " + $('M21').name
-							+ "<br>-Esperar frenado " + $('TC1').name
-							+ "<br>-Esperar frenado " + $('TC2').name
-							+ "<br>-Esperar frenado " + $('TC3').name;
+				if ($('M13').checked == true){
+					condition = condition + "-Apagar " + $('M13').name + "<br>";
+				}
+				if ($('M14').checked == true){
+					condition = condition + "-Apagar " + $('M14').name + "<br>";
+				}
+				if ($('M21').checked == true){
+					condition = condition + "-Apagar " + $('M21').name + "<br>";
+				}
+				if (parseInt($('vTC1').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC1').name + "<br>";
+				}
+				if (parseInt($('vTC2').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC2').name + "<br>";
+				}
+				if (parseInt($('vTC3').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC3').name + "<br>";
+				}
 			}
 			break;
 		case 'c1':
 			if (stat == false){
-				condition = "-Cerrar " + $('v7').name + "<br>-Cerrar " + $('v8').name
-							+ "<br>-Cerrar " + $('vE').name;
+				if ($('v7').checked == true){
+					condition = condition + "-Cerrar " + $('v7').name + "<br>";
+				}
+				if ($('v8').checked == true){
+					condition = condition + "-Cerrar " + $('v8').name + "<br>";
+				}
+				if ($('vE').checked == true){
+					condition = condition + "-Cerrar " + $('vE').name + "<br>";
+				}
 			}
 			break;
 		case 'c2':
 			if (stat == false){
-				condition = "-Cerrar " + $('v1').name + "<br>-Cerrar " + $('v2').name;
+				if ($('v1').checked == true){
+					condition = condition + "-Cerrar " + $('v1').name + "<br>";
+				}
+				if ($('v2').checked == true){
+					condition = condition + "-Cerrar " + $('v2').name + "<br>";
+				}
 			}
 			break;
 		case 'c3':
 			if (stat == false){
-				condition = "-Cerrar " + $('v4').name + "<br>-Cerrar " + $('vA').name
-							+ "<br>-Cerrar " + $('vB').name;
+				if ($('v4').checked == true){
+					condition = condition + "-Cerrar " + $('v4').name + "<br>";
+				}
+				if ($('vA').checked == true){
+					condition = condition + "-Cerrar " + $('vA').name + "<br>";
+				}
+				if ($('vB').checked == true){
+					condition = condition + "-Cerrar " + $('vB').name + "<br>";
+				}
 			}
 			break;
 		case 'c4':
 			if (stat == false){
-				condition = "-Esperar frenado " + $('TC1').name
-							+ "<br>-Esperar frenado " + $('TC2').name;
+				if (parseInt($('vTC1').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC1').name + "<br>";
+				}
+				if (parseInt($('vTC2').innerHTML) > 0){
+					condition = condition + "-Esperar frenado " + $('TC2').name + "<br>";
+				}
 			}
 			break;
 
 		case 'TC1':
 			if (stat == true){
-				condition = "-Abrir " + $('v2').name + "<br>-Encender " + $('c0').name;
+				if ($('v2').checked == false){
+					condition = condition + "-Abrir " + $('v2').name + "<br>";
+				}
+				if ($('c0').checked == false){
+					condition = condition + "-Encender " + $('c0').name + "<br>";
+				}
 			} else {
-				condition = "-Cerrar " + $('v3').name;
+				if ($('v3').checked == true){
+					condition = condition + "-Cerrar " + $('v3').name + "<br>";
+				}
 			}
 			break;
 		case 'TC2':
 			if (stat == true){
-				condition = "-Abrir " + $('v4').name + "<br>-Encender " + $('c0').name;
+				if ($('v4').checked == false){
+					condition = condition + "-Abrir " + $('v4').name + "<br>";
+				}
+				if ($('c0').checked == false){
+					condition = condition + "-Encender " + $('c0').name + "<br>";
+				}
 			} else {
-				condition = "-Cerrar " + $('v6').name;
+				if ($('v6').checked == true){
+					condition = condition + "-Cerrar " + $('v6').name + "<br>";
+				}
 			}
 			break;
 		case 'TC3':
 			if (stat == true){
-				condition = "-Abrir " + $('vB').name + "<br>-Encender " + $('c0').name;
+				if ($('vB').checked == false){
+					condition = condition + "-Abrir " + $('vB').name + "<br>";
+				}
+				if ($('c0').checked == false){
+					condition = condition + "-Encender " + $('c0').name + "<br>";
+				}
 			} else {
-				condition = "-Cerrar " + $('vC').name;
+				if ($('vC').checked == true){
+					condition = condition + "-Cerrar " + $('vC').name + "<br>";
+				}
 			}
 			break;
 	}
