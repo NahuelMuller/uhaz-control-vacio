@@ -29,7 +29,7 @@ var vars = require(__dirname + '/private/vars.json');
 io.sockets.on('connection', function (socket) { //gets called whenever a client connects
 
 	console.log('Connection');
-	
+
 	socket.on('auth', function(data){
 		if (userAuth == true){
 			socket.emit('ocupado');	//CAMBIAR NOMBRE AL EVENTO
@@ -190,6 +190,7 @@ ttyS1.on('data', function (data){	//Arduino ---> Host
 			case '0':	//0 - Lectura OK
 				if(isNaN(data[4]) || isNaN(data[5]) || isNaN(data[6]) || isNaN(data[7]) || isNaN(data[9])){
 					mensaje = 'Error';
+					queue--;   // Repetir anterior request
 				} else {
 					mensaje = data[4] + '.' + data[5] + data[6] + data[7] + 'E' + data[8] + data[9];
 				}
@@ -220,10 +221,3 @@ ttyS1.on('data', function (data){	//Arduino ---> Host
 		io.sockets.emit('vTC', {id: data[1], velocidad: velocidad});
 	}
 });
-
-
-
-
-
-
-

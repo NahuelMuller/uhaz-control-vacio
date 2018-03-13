@@ -244,8 +244,7 @@ function revisarEnclavamientos(id, stat) {	//returns true if (id) can be (stat)
 					|| $('M14').checked == true
 					|| $('M21').checked == true
 					|| parseInt($('vTC1').innerHTML) > 0
-					|| parseInt($('vTC2').innerHTML) > 0
-					|| parseInt($('vTC3').innerHTML) > 0) {
+					|| parseInt($('vTC2').innerHTML) > 0) {
 					return false;
 				} else {
 					return true;
